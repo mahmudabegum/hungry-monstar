@@ -35,6 +35,21 @@
     width: 100%;
 }
 
+.items{
+    text-align: center;
+}
+
+#ingredient{
+  margin-top: 10%;
+  max-width: 50%;
+  font-size: 30px;
+}
+
+.allItem{
+    box-shadow: 10px 10px 8px gray;
+    border-radius: 10px;
+}
+
 
 
 
