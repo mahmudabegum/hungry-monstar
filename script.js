@@ -11,7 +11,7 @@ fetch(url)
     let mealsItem = "";
     data.meals.forEach(meals => {
         mealsItem += `
-            <div idMeal = "${meals.idMeal}">
+            <div onclick = "showIngredient(${meals.idMeal})" class= "allItem" idMeal = "${meals.idMeal}">
              
            <div>
               <img src="${meals.strMealThumb}">
@@ -29,3 +29,28 @@ fetch(url)
 });
 
 });
+
+const showIngredient = mealId =>{
+    const url = `https://www.themealdb.com/api/json/v1/1/lookup.php?i=${mealId}`
+    fetch(url)
+      .then (response=>response.json())
+      .then (data=> detailsIngredient(data.meals[0]));
+      
+}
+
+const detailsIngredient = meals => {
+    const ingredient = document.getElementById("ingredient");
+    ingredient.innerHTML = `
+    <img src="${meals.strMealThumb}">
+    <h2>Meals Name:${meals.strMeal}</h2>
+    <h3>Ingredients</h3>
+    <ul>
+    <li>${meals.strIngredient1}</li>
+    <li>${meals.strIngredient2}</li>
+    <li>${meals.strIngredient3}</li>
+    <li>${meals.strIngredient4}</li>
+    <li>${meals.strIngredient5}</li>
+    <li>${meals.strIngredient6}</li>
+    </ul>
+    `
+}

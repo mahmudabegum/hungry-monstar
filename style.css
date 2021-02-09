@@ -4,8 +4,8 @@
 
 }
 .container{
-    width: 70%;
     margin: 40px;
+    max-width: 90%;
 
 }
 .middle input{
@@ -20,6 +20,19 @@
     background-color: rgb(255, 0, 255);
     font-size: 20px;
 
+}
+
+#allMeals{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 45px;
+    margin-top: 15%;
+
+}
+
+.allItem img{
+    display: block;
+    width: 100%;
 }
 
 
